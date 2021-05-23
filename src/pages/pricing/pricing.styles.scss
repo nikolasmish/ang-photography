@@ -1,8 +1,10 @@
 .pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 75vw;
   margin: auto;
-  min-height: 90vh;
-  padding: 30px;
+  min-height: 80vh;
 
   .title {
     text-align: center;

@@ -28,11 +28,26 @@
 
   .answer {
     max-height: 0;
+    padding: 0px 20px;
     overflow: hidden;
     transition: max-height 250ms linear;
   }
 
   h2 {
     margin: 0;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .option .question:hover {
+    color: black;
+  }
+
+  .option {
+    .answer,
+    h2 {
+      padding: 0 10px;
+    }
   }
 }

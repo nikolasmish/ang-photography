@@ -8,6 +8,7 @@ import HomePage from './pages/homepage/homepage.component';
 import GalleryPage from './pages/gallery/gallery.component'
 import Footer from './components/footer/footer.component';
 import FaqPage from './pages/faq/faq.component';
+import ContactPage from './pages/contact/contact.component';
 import PricingPage from './pages/pricing/pricing.component';
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
           <Route exact path='/arrange' component={GalleryPage} />
           <Route exact path='/pricing' component={PricingPage} />
           <Route exact path='/faq' component={FaqPage} />
-          <Route exact path='/contact' component={GalleryPage} />
+          <Route exact path='/contact' component={ContactPage} />
       </Switch>
       <Footer />
     </div>

@@ -1,4 +1,15 @@
 .faq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75vw;
+  min-height: 80vh;
+  margin: auto;
   color: black;
-  min-height: 90vh;
+}
+
+@media (max-width: 900px) {
+  .faq {
+    width: 100vw;
+  }
 }

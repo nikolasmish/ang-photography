@@ -43,17 +43,14 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .navigation {
-    padding: 0px 30px;
+    padding: 0px 20px;
+    justify-content: center;
 
     .links,
     .button {
       display: none;
-    }
-
-    .mobile {
-      display: block;
     }
   }
 }
