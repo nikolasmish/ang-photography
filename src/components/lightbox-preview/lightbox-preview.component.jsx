@@ -45,7 +45,7 @@ export default class LightboxPreview extends Component {
                 photoIndex: (photoIndex + 1) % images.length,
               })
             }
-            enableZoom={false}
+            enableZoom={true}
           />
           
         )
