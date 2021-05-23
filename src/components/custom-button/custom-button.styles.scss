@@ -1,0 +1,18 @@
+@import "../../assets/styles/colors";
+
+.custom-button {
+  font-family: "Poppins";
+  font-weight: bold;
+  padding: 10px 40px;
+  background-color: black;
+  color: white;
+  border: 2px black solid;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    color: black;
+    background-color: white;
+  }
+}

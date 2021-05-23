@@ -1,0 +1,20 @@
+.images {
+  width: 75vw;
+  margin: auto;
+  padding: 20px 0px;
+
+  ul {
+    display: grid;
+    margin: 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+    grid-gap: 16px;
+    justify-content: center;
+    padding: initial;
+
+    li {
+      list-style-type: none;
+      padding: 5px;
+      width: 300px;
+    }
+  }
+}

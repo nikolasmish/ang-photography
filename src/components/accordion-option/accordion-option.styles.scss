@@ -1,0 +1,38 @@
+@import "../../assets/styles/colors";
+
+.option {
+  margin-bottom: 30px;
+
+  .question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 250ms linear;
+
+    .opened {
+      color: $yellow;
+      transform: rotateZ(180deg);
+      transition: transform 250ms linear;
+    }
+
+    .closed {
+      transform: rotateZ(0deg);
+      transition: transform 250ms linear;
+    }
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+
+  .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms linear;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}

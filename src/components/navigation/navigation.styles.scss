@@ -1,0 +1,59 @@
+@import "../../assets/styles/colors";
+
+.navigation {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 60px;
+  margin: auto;
+
+  .camera {
+    color: black;
+  }
+
+  .logo {
+    width: 50px;
+    height: 100%;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .link {
+    margin: 10px 10px;
+    color: black;
+    height: 100%;
+    text-decoration: none;
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+
+  .button {
+    margin: auto;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .navigation {
+    padding: 0px 30px;
+
+    .links,
+    .button {
+      display: none;
+    }
+
+    .mobile {
+      display: block;
+    }
+  }
+}

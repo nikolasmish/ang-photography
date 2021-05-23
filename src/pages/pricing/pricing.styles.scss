@@ -1,0 +1,30 @@
+.pricing {
+  width: 75vw;
+  margin: auto;
+  min-height: 90vh;
+  padding: 30px;
+
+  .title {
+    text-align: center;
+  }
+
+  .cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  }
+}
