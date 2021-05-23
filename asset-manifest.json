@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ang-photography/static/css/main.ec092fc0.chunk.css",
-    "main.js": "/ang-photography/static/js/main.0f42e5f4.chunk.js",
-    "main.js.map": "/ang-photography/static/js/main.0f42e5f4.chunk.js.map",
+    "main.css": "/ang-photography/static/css/main.a22492f3.chunk.css",
+    "main.js": "/ang-photography/static/js/main.9f3100ae.chunk.js",
+    "main.js.map": "/ang-photography/static/js/main.9f3100ae.chunk.js.map",
     "runtime-main.js": "/ang-photography/static/js/runtime-main.5a8ea8c9.js",
     "runtime-main.js.map": "/ang-photography/static/js/runtime-main.5a8ea8c9.js.map",
     "static/css/2.ab18fb39.chunk.css": "/ang-photography/static/css/2.ab18fb39.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.809adb6e.chunk.js.map": "/ang-photography/static/js/2.809adb6e.chunk.js.map",
     "index.html": "/ang-photography/index.html",
     "static/css/2.ab18fb39.chunk.css.map": "/ang-photography/static/css/2.ab18fb39.chunk.css.map",
-    "static/css/main.ec092fc0.chunk.css.map": "/ang-photography/static/css/main.ec092fc0.chunk.css.map",
+    "static/css/main.a22492f3.chunk.css.map": "/ang-photography/static/css/main.a22492f3.chunk.css.map",
     "static/js/2.809adb6e.chunk.js.LICENSE.txt": "/ang-photography/static/js/2.809adb6e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5a8ea8c9.js",
     "static/css/2.ab18fb39.chunk.css",
     "static/js/2.809adb6e.chunk.js",
-    "static/css/main.ec092fc0.chunk.css",
-    "static/js/main.0f42e5f4.chunk.js"
+    "static/css/main.a22492f3.chunk.css",
+    "static/js/main.9f3100ae.chunk.js"
   ]
 }
