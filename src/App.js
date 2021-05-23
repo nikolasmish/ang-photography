@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 
 import './App.css';
 import { useState, useEffect } from "react";
@@ -19,15 +19,17 @@ function App() {
   return (
     <div>
       <Navigation />
-      <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route exact path='/gallery' component={GalleryPage} />
-          <Route exact path='/about' component={GalleryPage} />
-          <Route exact path='/arrange' component={GalleryPage} />
-          <Route exact path='/pricing' component={PricingPage} />
-          <Route exact path='/faq' component={FaqPage} />
-          <Route exact path='/contact' component={ContactPage} />
-      </Switch>
+      <Router basename={process.env.PUBLIC_URL}>
+        <Switch>
+            <Route exact path='/' component={HomePage} />
+            <Route exact path='/gallery' component={GalleryPage} />
+            <Route exact path='/about' component={GalleryPage} />
+            <Route exact path='/arrange' component={GalleryPage} />
+            <Route exact path='/pricing' component={PricingPage} />
+            <Route exact path='/faq' component={FaqPage} />
+            <Route exact path='/contact' component={ContactPage} />
+        </Switch>
+      </Router>
       {
         size.width <= 900 ?
         (<MobileNavigation/>)
