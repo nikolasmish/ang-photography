@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ang-photography/static/css/main.585156cd.chunk.css",
+    "main.js": "/ang-photography/static/js/main.9770467e.chunk.js",
+    "main.js.map": "/ang-photography/static/js/main.9770467e.chunk.js.map",
+    "runtime-main.js": "/ang-photography/static/js/runtime-main.0a6356a7.js",
+    "runtime-main.js.map": "/ang-photography/static/js/runtime-main.0a6356a7.js.map",
+    "static/css/2.ab18fb39.chunk.css": "/ang-photography/static/css/2.ab18fb39.chunk.css",
+    "static/js/2.b04f57ae.chunk.js": "/ang-photography/static/js/2.b04f57ae.chunk.js",
+    "static/js/2.b04f57ae.chunk.js.map": "/ang-photography/static/js/2.b04f57ae.chunk.js.map",
+    "index.html": "/ang-photography/index.html",
+    "static/css/2.ab18fb39.chunk.css.map": "/ang-photography/static/css/2.ab18fb39.chunk.css.map",
+    "static/css/main.585156cd.chunk.css.map": "/ang-photography/static/css/main.585156cd.chunk.css.map",
+    "static/js/2.b04f57ae.chunk.js.LICENSE.txt": "/ang-photography/static/js/2.b04f57ae.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0a6356a7.js",
+    "static/css/2.ab18fb39.chunk.css",
+    "static/js/2.b04f57ae.chunk.js",
+    "static/css/main.585156cd.chunk.css",
+    "static/js/main.9770467e.chunk.js"
+  ]
+}
