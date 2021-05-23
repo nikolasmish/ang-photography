@@ -1,6 +1,6 @@
 {
+  "name": "ang-photography",
   "homepage": "http://nikolasmish.github.io/ang-photography",
-  "name": "ang-photo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
