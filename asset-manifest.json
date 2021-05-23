@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ang-photography/static/css/main.585156cd.chunk.css",
-    "main.js": "/ang-photography/static/js/main.1e157ea3.chunk.js",
-    "main.js.map": "/ang-photography/static/js/main.1e157ea3.chunk.js.map",
+    "main.js": "/ang-photography/static/js/main.be6e39a8.chunk.js",
+    "main.js.map": "/ang-photography/static/js/main.be6e39a8.chunk.js.map",
     "runtime-main.js": "/ang-photography/static/js/runtime-main.5a8ea8c9.js",
     "runtime-main.js.map": "/ang-photography/static/js/runtime-main.5a8ea8c9.js.map",
     "static/css/2.ab18fb39.chunk.css": "/ang-photography/static/css/2.ab18fb39.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.ab18fb39.chunk.css",
     "static/js/2.809adb6e.chunk.js",
     "static/css/main.585156cd.chunk.css",
-    "static/js/main.1e157ea3.chunk.js"
+    "static/js/main.be6e39a8.chunk.js"
   ]
 }
