@@ -12,7 +12,7 @@ const ImagesContainer = () => (
             {
             IMAGES_DATA.map(
                 (image) => (
-                <li key={image.id}><ImagePreview id={image.id} imageUrl={image.imageUrl} title={image.title}/></li>)
+                <li key={image.id}><ImagePreview id={image.id} description={image.description} imageUrl={image.imageUrl} title={image.title}/></li>)
                 )
             }
             </ul>

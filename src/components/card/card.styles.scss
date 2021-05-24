@@ -1,4 +1,5 @@
 .card {
+  background-color: white;
   display: flex;
   flex-direction: column;
   min-width: 300px;
@@ -19,6 +20,7 @@
 
 @media (max-width: 900px) {
   .card {
+    min-width: 75%;
     padding: 20px;
   }
 }

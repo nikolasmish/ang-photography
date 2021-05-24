@@ -10,17 +10,11 @@ import CustomButton from '../custom-button/custom-button.component'
 const Navigation = () => (
     <div className='navigation'>
             <Link to='/' style={{textDecoration:"none"}} >
-                <h2 style={{margin:'0px', color:'black'}}>ONA ITTY • Angie</h2>
+                <h2 style={{margin:'0px', color:'black'}}>ONA ITTY</h2>
             </Link>
         <div className='links'>
-            <Link to='/gallery'>
-                <span className='link'>GALERIJA</span>
-            </Link>
             <Link to='/about'>
                 <span className='link'>O MENI</span>
-            </Link>
-            <Link to='/pricing'>
-                <span className='link'>CENOVNIK</span>
             </Link>
             <Link to='/faq'>
                 <span className='link'>FAQ</span>

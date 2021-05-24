@@ -1,15 +1,25 @@
+@import "../../assets/styles/colors";
+
 .faq {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 75vw;
+  width: 100vw;
+
   min-height: 80vh;
   margin: auto;
   color: black;
+
+  .container {
+    width: 75vw;
+  }
 }
 
 @media (max-width: 900px) {
   .faq {
-    width: 100vw;
+    .container {
+      width: 100vw;
+    }
   }
 }

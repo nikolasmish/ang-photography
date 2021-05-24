@@ -8,7 +8,9 @@ const PricingPage = () => (
         <h2 className='title'>Cenovnik</h2>
         <div className='cards'>
             <Card>
-                <h2>Slikanje</h2>
+                <div className="title">
+                    <h2>Slikanje</h2>
+                </div>
                 <ul>
                     <li><h3>1000 dinara</h3></li>
                     <li>Broj slika: 30</li>
@@ -23,9 +25,10 @@ const PricingPage = () => (
                 </ul>
             </Card>
             <Card>
-                <h2>Slikanje i obrada
-                    <br/>Osnovna cena +
-                </h2>
+                <div className="title">
+                    <h2>Slikanje i obrada:</h2>
+                        <span className='subtitle'>Osnovna cena +</span>
+                </div>
                 <ul>
                     <li><h3>500 dinara</h3></li>
                     <li>Broj slika: 5</li>
@@ -40,9 +43,11 @@ const PricingPage = () => (
                 </ul>
             </Card>
             <Card>
-                <h2>Samo obrada
-                    <br />(vaših HD slika)
-                </h2>
+                <div className="title">
+                    <h2>Samo obrada
+                    </h2>
+                        <span className='subtitle'>(vaših HD slika)</span>
+                </div>
                 <ul>
                     <li><h3>200 dinara</h3></li>
                     <li>Broj slika: 1</li>

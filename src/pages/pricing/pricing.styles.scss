@@ -1,9 +1,11 @@
+@import "../../assets/styles/colors";
+
 .pricing {
+  background-color: $yellow;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 75vw;
-  margin: auto;
+  width: 100%;
   min-height: 80vh;
 
   .title {
@@ -14,6 +16,21 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+
+    .title {
+      text-align: left;
+      margin-bottom: 5px;
+
+      h2,
+      h3 {
+        margin: 0;
+      }
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+    }
 
     h2,
     h3 {
