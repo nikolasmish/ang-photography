@@ -9,7 +9,7 @@ import CustomButton from '../custom-button/custom-button.component'
 
 const Navigation = () => (
     <div className='navigation'>
-            <Link to='/' style={{textDecoration:"none"}} >
+            <Link to='/' style={{textDecoration:"none"}} className='logo' >
                 <h2 style={{margin:'0px', color:'black'}}>ONA ITTY</h2>
             </Link>
         <div className='links'>

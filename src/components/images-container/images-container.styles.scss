@@ -1,5 +1,5 @@
 .images {
-  width: 75vw;
+  width: 75%;
   margin: auto;
   padding: 20px 0px;
 
@@ -16,5 +16,11 @@
       padding: 5px;
       width: 300px;
     }
+  }
+}
+
+@media (max-width: 900px) {
+  .images {
+    width: 85%;
   }
 }

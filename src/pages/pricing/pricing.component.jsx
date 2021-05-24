@@ -8,7 +8,7 @@ const PricingPage = () => (
         <h2 className='title'>Cenovnik</h2>
         <div className='cards'>
             <Card>
-                <div className="title">
+                <div className="card-title">
                     <h2>Slikanje</h2>
                 </div>
                 <ul>
@@ -25,7 +25,7 @@ const PricingPage = () => (
                 </ul>
             </Card>
             <Card>
-                <div className="title">
+                <div className="card-title">
                     <h2>Slikanje i obrada:</h2>
                         <span className='subtitle'>Osnovna cena +</span>
                 </div>
@@ -43,7 +43,7 @@ const PricingPage = () => (
                 </ul>
             </Card>
             <Card>
-                <div className="title">
+                <div className="card-title">
                     <h2>Samo obrada
                     </h2>
                         <span className='subtitle'>(vaših HD slika)</span>
