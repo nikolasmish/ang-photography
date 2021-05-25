@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Lightbox from 'react-image-lightbox';
-import {IMAGES_DATA} from '../../ImagesData'
 
 import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
 

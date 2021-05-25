@@ -6,6 +6,8 @@ import Card from '../../components/card/card.component'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 
+import {sendMail} from '../../mailgun/mailgun.config'
+
 class ContactPage extends React.Component {
     constructor(props){
         super(props)
@@ -20,7 +22,8 @@ class ContactPage extends React.Component {
     handleSubmit = event =>{
         event.preventDefault();
 
-        alert(`${this.state.name}, ${this.state.email}, ${this.state.message} `)
+        sendMail(this.state.name, this.state.email, this.state.message)
+
         this.setState({
             name: '',
             email:'',

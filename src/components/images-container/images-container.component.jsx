@@ -1,31 +1,26 @@
-import React,{useState, useEffect} from 'react'
+import React from 'react'
 
 import './images-container.styles.scss'
 
 import ImagePreview from '../image-preview/image-preview.component'
-
 import {firestore} from '../../firebase/firebase.utils'
 
 let Arr = []
 
 
-
 class ImagesContainer extends React.Component{
-  constructor(props){
+  constructor({data, ...props}){
     super(props)
 
-
-  
     this.state = {
       images: [],
       setImages: []
     }
   }
 
-    // const [images,setImages]=useState([])
     fetchImages=async()=>{
       let temp = []
-      const response=firestore.collection('gallery-images');
+      const response=firestore.collection(this.props.data);
       const data=await response.get();
       data.docs.forEach(item=>{
       temp.push(item.data())
@@ -42,12 +37,8 @@ class ImagesContainer extends React.Component{
     this.fetchImages()
   }
 
-  // useEffect(() => {
-  //   fetchImages();
-  // }, [])
 
     render(){
-
       return(
           <div className='images'>
               <ul>
@@ -60,7 +51,6 @@ class ImagesContainer extends React.Component{
                   :
                   null
               } 
-
               </ul>
           </div>
       )

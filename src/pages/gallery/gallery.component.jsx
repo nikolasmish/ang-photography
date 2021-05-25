@@ -7,7 +7,7 @@ import ImagesContainer from '../../components/images-container/images-container.
 
 const GalleryPage = () => (
     <div className='gallery'>
-        <ImagesContainer />
+        <ImagesContainer data='gallery-images' />
 
     </div>
 )
