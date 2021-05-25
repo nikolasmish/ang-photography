@@ -8,6 +8,7 @@ import ImagesContainer from '../../components/images-container/images-container.
 const GalleryPage = () => (
     <div className='gallery'>
         <ImagesContainer />
+
     </div>
 )
 

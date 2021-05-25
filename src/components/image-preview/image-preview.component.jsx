@@ -7,22 +7,20 @@ import LightboxPreview from '../lightbox-preview/lightbox-preview.component'
 import { render } from '@testing-library/react'
 
 
-const openPreview = (id) => {
+const openPreview = (id, imagesData) => {
     render(
-        <LightboxPreview idx={id-1} isOpen={true} />
+        <LightboxPreview idx={id} isOpen={true} imagesData={imagesData} />
     )
-
-    
 }
 
 const ImagePreview = (props) => (
     <div className='image-preview'>
         <div className="image-container">
-            <div className='image' style={{backgroundImage:`url(${props.imageUrl})`}} />
+            <div className='image' style={{backgroundImage:`url(${props.thumbnail ? props.thumbnail : props.imageUrl})`}} />
             <div className='image-hover'>
                 {/* <h3 className='title'>{props.title}</h3> */}
                 <div className='button'>
-                    <div onClick={() => openPreview(props.id)}>
+                    <div onClick={() => openPreview(props.id, props.imagesData)}>
                         <CustomButton>Preview</CustomButton>
                     </div>
                 </div>

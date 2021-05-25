@@ -53,7 +53,4 @@ export const IMAGES_DATA = [
         imageUrl: 'https://images.unsplash.com/photo-1621691553102-66d4ecdb1be2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatem in voluptatum saepe culpa magnam optio minima laborum consectetur deserunt et! Cumque facere ipsum modi ratione nisi, alias ea? Nostrum non, aspernatur quas quis a obcaecati laborum iusto dolorum, explicabo vel blanditiis consectetur quisquam quaerat maxime facere quae accusamus voluptas.'
     },
-    
-    
-   
 ]

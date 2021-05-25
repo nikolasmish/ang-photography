@@ -1,6 +1,10 @@
 @import "../../assets/styles/colors";
 
 .navigation {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
   height: 10vh;
   display: flex;
   justify-content: space-between;

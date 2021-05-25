@@ -4,6 +4,7 @@ import { Switch, Route} from 'react-router-dom'
 import './App.css';
 import { useState, useEffect } from "react";
 
+
 import Navigation from './components/navigation/navigation.component';
 import GalleryPage from './pages/gallery/gallery.component'
 import Footer from './components/footer/footer.component';
@@ -12,8 +13,11 @@ import ContactPage from './pages/contact/contact.component';
 import MobileNavigation from './components/mobile-navigation/mobile-navigation.component';
 
 
+
+
 function App() {
   const size = useWindowSize();
+
   return (
     <div>
       <Navigation />

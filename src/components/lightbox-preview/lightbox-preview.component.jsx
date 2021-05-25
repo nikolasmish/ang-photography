@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Lightbox from 'react-image-lightbox';
 import {IMAGES_DATA} from '../../ImagesData'
+
 import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
 
-const images = IMAGES_DATA.map(item => {
-    return item.imageUrl
-})
+let imagesUrls = []
 
 export default class LightboxPreview extends Component {
   constructor(props) {
@@ -14,12 +13,15 @@ export default class LightboxPreview extends Component {
     this.state = {
       photoIndex: props.idx,
       isOpen: props.isOpen,
+      images: props.imagesData
     };
+
+      imagesUrls = this.state.images.map(item => {
+
+      return item.imageUrl
+    })
   }
 
-  componentDidMount(){
-    document.body.style.overflowY = "hidden"
-  }
   
   render() {
     const { photoIndex, isOpen } = this.state;
@@ -28,21 +30,21 @@ export default class LightboxPreview extends Component {
       <div>
         {isOpen && (
           <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+            mainSrc={imagesUrls[photoIndex]}
+            nextSrc={imagesUrls[(photoIndex + 1) % imagesUrls.length]}
+            prevSrc={imagesUrls[(photoIndex + imagesUrls.length - 1) % imagesUrls.length]}
             onCloseRequest={() => {
               this.setState({ isOpen: false })
               document.body.style.overflowY = "scroll"
             }}
             onMovePrevRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + images.length - 1) % images.length,
+                photoIndex: (photoIndex + imagesUrls.length - 1) % imagesUrls.length,
               })
             }
             onMoveNextRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + 1) % images.length,
+                photoIndex: (photoIndex + 1) % imagesUrls.length,
               })
             }
             enableZoom={true}
