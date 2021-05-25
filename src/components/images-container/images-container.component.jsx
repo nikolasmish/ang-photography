@@ -9,8 +9,8 @@ let Arr = []
 
 
 class ImagesContainer extends React.Component{
-  constructor({data, ...props}){
-    super(props)
+  constructor(data, props){
+    super(data, props)
 
     this.state = {
       images: [],
