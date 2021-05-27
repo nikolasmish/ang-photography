@@ -12,7 +12,11 @@
   color: black;
 
   .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 75vw;
+    min-height: 90vh;
   }
 }
 

@@ -1,0 +1,53 @@
+.arrange {
+  width: 90vw;
+  min-height: 80vh;
+  margin: auto;
+
+  .card {
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+
+    form {
+      .form-input {
+        display: flex;
+
+        .left {
+          h2 {
+            margin: 0;
+          }
+        }
+
+        .right {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .left,
+        .right {
+          margin: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .arrange {
+    width: 100vw;
+
+    .card {
+      padding: 20px;
+      form .form-input {
+        flex-direction: column;
+
+        .left,
+        .right {
+          margin: 0px;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 @import "../../assets/styles/colors";
 
 .image-preview {
+  background-color: white;
   height: auto;
   margin: 5px;
   margin-bottom: 20px;
@@ -49,7 +50,7 @@
   &:hover {
     .image {
       opacity: 0.8;
-      transform: scale(2);
+      transform: scale(1.5);
       transition: transform 6s linear;
     }
 
@@ -88,6 +89,7 @@
     }
 
     .description {
+      word-wrap: break-word;
       p {
         margin: 0;
         margin-bottom: 10px;

@@ -3,10 +3,21 @@
   margin: auto;
   padding: 20px 0px;
 
+  .show {
+    transition: opacity 500ms linear;
+    opacity: 1;
+  }
+
+  .hide {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  }
+
   ul {
     display: grid;
     margin: 0;
     grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+    grid-auto-columns: auto;
     grid-gap: 16px;
     justify-content: center;
     padding: initial;

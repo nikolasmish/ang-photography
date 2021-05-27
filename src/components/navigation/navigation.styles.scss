@@ -12,6 +12,13 @@
   padding: 0px 60px;
   margin: auto;
 
+  .box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .logo {
     transform: rotateX(0deg);
     transition: transform 600ms linear;
@@ -39,8 +46,13 @@
     }
   }
 
+  .right-side {
+    display: flex;
+    align-items: center;
+  }
+
   .button {
-    margin: auto;
+    padding-left: 10px;
   }
 
   .mobile {
@@ -50,8 +62,9 @@
 
 @media (max-width: 900px) {
   .navigation {
-    padding: 0px 20px;
     justify-content: center;
+    flex-direction: column;
+    height: 12vh;
 
     .logo {
       &:hover {

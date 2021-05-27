@@ -12,7 +12,7 @@ const FaqPage = () =>(
     <div className='faq'>
         <div className="container">
             <Card>
-            <Accordion data={FAQ_DATA} />
+                <Accordion data={FAQ_DATA} />
             </Card>
         </div>
             <PricingPage />

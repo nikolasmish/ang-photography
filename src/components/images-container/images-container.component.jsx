@@ -5,35 +5,28 @@ import './images-container.styles.scss'
 import ImagePreview from '../image-preview/image-preview.component'
 import {firestore} from '../../firebase/firebase.utils'
 
-let Arr = []
+let galleryImages = []
 
 
 class ImagesContainer extends React.Component{
-  constructor(data, props){
-    super(data, props)
-
-    this.state = {
-      images: [],
-      setImages: []
-    }
-  }
-
     fetchImages=async()=>{
       let temp = []
-      const response=firestore.collection(this.props.data);
-      const data=await response.get();
-      data.docs.forEach(item=>{
-      temp.push(item.data())
+      const peopleRef=firestore.collection(this.props.data);
+    
+      const data=await peopleRef.get();
+      data.docs.forEach((item, idx)=>{
+        temp.push(item.data())
+        
       })
-      Arr = temp
+      galleryImages = temp
       
       this.setState({})
     }
 
   
   componentDidMount(){
-    if(Arr.length)
-    return
+    if(galleryImages.length)
+      return
     this.fetchImages()
   }
 
@@ -41,12 +34,12 @@ class ImagesContainer extends React.Component{
     render(){
       return(
           <div className='images'>
-              <ul>
+              <ul className={galleryImages.length ? 'show' : 'hide'}>
               {
-                Arr.length ?
-                Arr.map(
+                galleryImages.length ?
+                galleryImages.map(
                   (image, idx) => (
-                  <li key={idx}><ImagePreview id={idx} description={image.description} imageUrl={image.imageUrl} title={image.title} imagesData={Arr}/></li>)
+                  <li key={idx}><ImagePreview id={idx} description={image.description} imageUrl={image.imageUrl} title={image.title} imagesData={galleryImages} /></li>)
                   )
                   :
                   null
