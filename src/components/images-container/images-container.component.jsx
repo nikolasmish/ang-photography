@@ -39,7 +39,9 @@ class ImagesContainer extends React.Component{
                 galleryImages.length ?
                 galleryImages.map(
                   (image, idx) => (
-                  <li key={idx}><ImagePreview id={idx} description={image.description} imageUrl={image.imageUrl} title={image.title} imagesData={galleryImages} /></li>)
+                  <li key={idx}>
+                    <ImagePreview id={idx} description={image.description} imageUrl={image.imageUrl} thumbnail={image.thumbnail} title={image.title} imagesData={galleryImages} />
+                  </li>)
                   )
                   :
                   null
