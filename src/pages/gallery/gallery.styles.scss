@@ -1,9 +1,5 @@
-.gallery {
+.gallery-page {
   min-height: 80vh;
   display: flex;
-  align-items: center;
-  // background-image: '../../assets/Untitled-1.jpg';
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  justify-content: center;
 }

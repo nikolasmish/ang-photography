@@ -3,6 +3,7 @@ import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
 import userReducer from './user/user.reducer'
+import galleryReducer from './gallery-images/gallery-images.reducer'
 
 const persistConfig = {
     key: 'root',
@@ -11,7 +12,8 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    user: userReducer
+    user: userReducer,
+    gallery: galleryReducer
 })
 
 export default persistReducer(persistConfig, rootReducer)

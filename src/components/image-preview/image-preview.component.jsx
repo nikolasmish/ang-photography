@@ -20,9 +20,14 @@ const ImagePreview = (props) => (
             <div className='image-hover'>
                 {/* <h3 className='title'>{props.title}</h3> */}
                 <div className='button'>
+                    {
+                    props.preview ?
                     <div onClick={() => openPreview(props.id, props.imagesData)}>
                         <CustomButton>Preview</CustomButton>
                     </div>
+                    :
+                    null
+                    }
                 </div>
     </div>
         </div>

@@ -1,0 +1,16 @@
+.gallery-delete {
+  width: 70%;
+  margin: auto;
+
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .item {
+      width: 30%;
+      padding: 10px;
+    }
+  }
+}

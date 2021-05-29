@@ -1,56 +1,60 @@
 import React from 'react'
 
-import './images-container.styles.scss'
+import { connect } from 'react-redux'
+import { setGalleryImages } from '../../redux/gallery-images/gallery-image.actions'
 
 import ImagePreview from '../image-preview/image-preview.component'
-import {firestore} from '../../firebase/firebase.utils'
+import {firestore, getGalleryImages} from '../../firebase/firebase.utils'
+
+import './images-container.styles.scss'
 
 let galleryImages = []
 
-
 class ImagesContainer extends React.Component{
-    fetchImages=async()=>{
-      let temp = []
-      const peopleRef=firestore.collection('gallery-images');
-    
-      const data=await peopleRef.get();
-      data.docs.forEach((item, idx)=>{
-        temp.push(item.data())
-        
-      })
-      galleryImages = temp
-      
-      this.setState({})
-    }
+  constructor({itemCount}){
+    super({itemCount})
 
-  
-  componentDidMount(){
-    if(galleryImages.length)
-      return
-    this.fetchImages()
+
   }
 
+  async componentDidMount(){
+    if(galleryImages.length)
+      return
+    galleryImages = await getGalleryImages()
+    console.log(galleryImages)
+
+    this.props.setGalleryImages(galleryImages)
+    
+    this.setState({})
+  }
 
     render(){
       return(
-          <div className='images'>
-              <ul className={galleryImages.length ? 'show' : 'hide'}>
+          <div className='images-container'>
+              <ul className={galleryImages ? 'show' : 'hide'}>
               {
                 galleryImages.length ?
-                galleryImages.map(
+                galleryImages.slice(0, this.props.itemCount).map(
                   (image, idx) => (
                   <li key={idx}>
-                    <ImagePreview id={idx} description={image.description} imageUrl={image.imageUrl} thumbnail={image.thumbnail} title={image.title} imagesData={galleryImages} />
+                    <ImagePreview id={idx} description={image.description} imageUrl={image.imageUrl} thumbnail={image.thumbnail} title={image.title} imagesData={galleryImages} preview />
                   </li>)
                   )
                   :
-                  null
+                  <h2>Oh-oh, nothing to see here!</h2>
               } 
               </ul>
           </div>
       )
     }
-            
 }
 
-export default ImagesContainer
+const mapDispatchToProps = dispatch => ({
+  setGalleryImages: gallery => dispatch(setGalleryImages(gallery))
+})
+
+const mapStateToProps = (state) => ({
+  galleryImages: state.gallery.galleryImages
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ImagesContainer)

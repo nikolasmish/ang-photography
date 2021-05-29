@@ -1,6 +1,7 @@
 import React from 'react'
 
-import ImagePreview from '../image-preview/image-preview.component'
+import './gallery-upload.styles.scss'
+
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
 import {addToGallery} from '../../firebase/firebase.utils'
@@ -25,11 +26,16 @@ class GalleryUpload extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        let index = this.props.data.length + 1
+        addToGallery(this.state.title, this.state.description, this.state.imageUrl, this.state.thumbnail)
 
-        addToGallery('gallery-images', index, this.state.title, this.state.description, this.state.imageUrl, this.state.thumbnail)
+        this.setState({
+            title: '',
+            description : '',
+            imageUrl: '',
+            thumbnail: ''
+        })
+
     }
-
 
     render() {
         return (
@@ -40,7 +46,9 @@ class GalleryUpload extends React.Component {
                     <FormInput name="imageUrl" type="text" value={this.state.imageUrl} label="Image URL*" handleChange={this.handleChange} required />
                     <FormInput name="thumbnail" type="text" value={this.state.thumbnail} label="Thumbnail" handleChange={this.handleChange} />
 
-                    <CustomButton type='submit'>Upload </CustomButton>
+                    <div className="button">
+                        <CustomButton type='submit'>Upload </CustomButton>
+                    </div>
                 </form>
             </div>
         )

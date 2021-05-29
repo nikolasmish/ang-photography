@@ -21,20 +21,43 @@ const config = {
   export const storageRef = firestorage.ref();
   export const storageGalleryImagesRef = storageRef.child('gallery-images');
 
-export function addToGallery(collection, index, title, description, imageUrl, thumbnail){
-    firestore.collection(collection).doc(String.toString(index)).set({
+export const getGalleryImages = async () => {
+    console.log('FETCHING')
+    let temp = []
+    const peopleRef=firestore.collection('gallery-images');
+    
+    const data=await peopleRef.get();
+    data.docs.forEach((item, idx)=>{
+        temp.push(item.data())
+    })
+
+    return temp
+}
+
+export function addToGallery(title, description, imageUrl, thumbnail){
+    firestore.collection('gallery-images').add({
         title: title,
         description: description,
         imageUrl: imageUrl,
-        thumbnail: thumbnail
+        thumbnail: thumbnail,
     })
-    .then(() => {
-        console.log("Document successfully written!");
+    .then((item) => {
+        item.update({id: item.id})
+        alert('Success!')
     })
     .catch((error) => {
-        console.error("Error writing document: ", error);
+        alert('Error: ' + error)
     });
 }
+
+export function removeFromGallery(id){
+    firestore.collection('gallery-images').doc(id.toString()).delete().then(() => {
+        console.log("Document successfully deleted!");
+    }).catch((error) => {
+        console.error("Error removing document: ", error);
+    });
+}
+
 
 export const auth = firebase.auth()
 export default firebase

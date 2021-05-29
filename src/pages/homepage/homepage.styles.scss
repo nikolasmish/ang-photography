@@ -1,0 +1,17 @@
+.homepage {
+  min-height: 80vh;
+  padding: 20px;
+  .header-title {
+    text-align: center;
+  }
+
+  .button {
+    margin: auto;
+  }
+
+  .new-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

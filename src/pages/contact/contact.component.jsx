@@ -34,10 +34,13 @@ class ContactPage extends React.Component {
             mailSent: mail
       })
 
-      this.state.mailSent ? 
-      alert('Vaš mail je uspešno poslat!')
-      :
-      alert('Došlo je dogreške, pokušaj kasnije!')
+      if(this.state.mailSent){
+          alert('Vaš mail je uspešno poslat!')
+          this.props.history.push('/')
+      } else{
+
+          alert('Došlo je dogreške, pokušaj kasnije!')
+      }
 
       
     }

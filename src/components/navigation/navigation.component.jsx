@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -9,7 +10,7 @@ import './navigation.styles.scss'
 import CustomButton from '../custom-button/custom-button.component'
 
 
-const Navigation = () => (
+const Navigation = ({currentUser}) => (
     <div className='navigation'>
         <div className="box">
             <Link to='/' style={{textDecoration:"none"}} className='logo' >
@@ -18,6 +19,9 @@ const Navigation = () => (
         </div>
         <div className='links box'>
             <div>
+                <Link to='/gallery'>
+                    <span className='link'>GALERIJA</span>
+                </Link>
                 <Link to='/about'>
                     <span className='link'>O MENI</span>
                 </Link>
@@ -34,8 +38,19 @@ const Navigation = () => (
                 <a className='link' href="https://www.facebook.com/ONA-ITTY-102068988686196" rel="noreferrer" target='_blank'><FontAwesomeIcon icon={faFacebook} size='2x' /></a>
                 <a className='link' href="https://www.instagram.com/onaitty/" rel="noreferrer" target='_blank'><FontAwesomeIcon icon={faInstagram} size='2x' /></a>
                 <Link className='button' to='/arrange'>
-                    <CustomButton >ZAKAŽI</CustomButton>
+                    <CustomButton>ZAKAŽI</CustomButton>
                 </Link>
+                {
+                    currentUser ?
+                    (
+                    <Link className='button' to='/admin'>
+                        <CustomButton>EDIT POSTS</CustomButton>
+                    </Link>
+                    )
+                    :
+                    null
+                }
+                
             </div>
         </div>
         <div className='mobile'>
@@ -44,4 +59,8 @@ const Navigation = () => (
     </div>
 )
 
-export default Navigation;
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+})
+
+export default connect()(Navigation);
