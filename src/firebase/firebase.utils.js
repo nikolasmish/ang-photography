@@ -1,6 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/storage'
+import 'firebase/auth'
 
 const config = {
     apiKey: "AIzaSyB24saGJGqmzj-lGlH4VkJjvwukbMxpyLs",
@@ -20,11 +21,7 @@ const config = {
   export const storageRef = firestorage.ref();
   export const storageGalleryImagesRef = storageRef.child('gallery-images');
 
-
-
-
-
-  export async function getImagesFromFolder(folderName){
+export async function getImagesFromFolder(folderName){
     const ref = storageRef.child(folderName)
     let array = []
 
@@ -37,6 +34,22 @@ const config = {
         }).then(() => {return array})
 
         return array
-  }
+}
 
-  export default firebase
+export function LoginWithEmail(email, password){
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        console.log('User logged in')
+    })
+    .catch((error) => {
+        //var errorCode = error.code;
+        var errorMessage = error.message;
+
+        console.log('Error: ' + errorMessage)
+    });
+}
+    
+
+export default firebase

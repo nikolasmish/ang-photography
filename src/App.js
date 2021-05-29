@@ -11,6 +11,7 @@ import Footer from './components/footer/footer.component';
 import FaqPage from './pages/faq/faq.component';
 import ContactPage from './pages/contact/contact.component';
 import ArrangePage from './pages/arrange/arrange.component';
+import AdminPage from './pages/admin-page/admin-page.component';
 import MobileNavigation from './components/mobile-navigation/mobile-navigation.component';
 
 
@@ -25,6 +26,7 @@ function App() {
       
         <Switch>
             <Route exact path='/about' component={GalleryPage} />
+            <Route exact path='/admin' component={AdminPage} />
             <Route exact path='/arrange' component={ArrangePage} />
             <Route exact path='/faq' component={FaqPage} />
             <Route exact path='/contact' component={ContactPage} />
