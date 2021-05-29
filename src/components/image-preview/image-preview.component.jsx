@@ -47,7 +47,7 @@ const ImagePreview = (props) => (
             }
             <div className='about'>
                 <p>BY ANGIE SIMIC</p>
-                <p>PHOTOGRAPHY BY ANGIE SIMIC</p>
+                <p>PHOTOGRAPHY BY ONA ITTY</p>
             </div>
             
             
