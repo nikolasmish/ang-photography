@@ -8,3 +8,9 @@
     margin: auto;
   }
 }
+
+@media (max-width: 900px) {
+  .gallery-upload {
+    width: 70%;
+  }
+}

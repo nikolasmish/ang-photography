@@ -7,7 +7,7 @@ import { setCurrentUser } from '../../redux/user/user.actions'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 
-import {auth} from '../../firebase/firebase.utils'
+import firebase,{auth} from '../../firebase/firebase.utils'
 
 
 import './login-page.styles.scss'
@@ -30,19 +30,30 @@ class LoginPage extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        auth.signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then((userCredential) => {
-            this.props.setCurrentUser({
-                currentUser: userCredential
+        auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            .then(() => {
+
+                return auth.signInWithEmailAndPassword(this.state.email, this.state.password)
+                .then((userCredential) => {
+                    this.props.setCurrentUser({
+                        currentUser: userCredential
+                    })
+                    console.log(userCredential)
+                })
+                .catch((error) => {
+                    //var errorCode = error.code;
+                    var errorMessage = error.message;
+            
+                    console.log('Error: ' + errorMessage)
+                });
             })
-            console.log(userCredential)
-        })
-        .catch((error) => {
-            //var errorCode = error.code;
-            var errorMessage = error.message;
-    
-            console.log('Error: ' + errorMessage)
-        });
+            .catch((error) => {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            });
+
+        
 
     }
         

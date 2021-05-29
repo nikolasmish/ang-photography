@@ -10,13 +10,13 @@ import AdminPanel from '../../components/admin-panel/admin-panel.component'
 const AdminPage = ({ currentUser }) => (
     <div className="admin-page">
         <div className="container">
+            <AdminPanel />
             
-            {
+            {/* {
                 currentUser ?
-                <AdminPanel />
                 :
                 <LoginPage />
-            }
+            } */}
 
         </div>
     </div>

@@ -22,12 +22,15 @@ const config = {
   export const storageGalleryImagesRef = storageRef.child('gallery-images');
 
 export const getGalleryImages = async () => {
+
+    
+
     console.log('FETCHING')
     let temp = []
-    const peopleRef=firestore.collection('gallery-images');
+    const peopleRef=firestore.collection('gallery-images').orderBy('createdAt', 'desc');
     
     const data=await peopleRef.get();
-    data.docs.forEach((item, idx)=>{
+    data.docs.forEach((item)=>{
         temp.push(item.data())
     })
 
@@ -35,11 +38,13 @@ export const getGalleryImages = async () => {
 }
 
 export function addToGallery(title, description, imageUrl, thumbnail){
+    const timestamp = firebase.firestore.FieldValue.serverTimestamp;
     firestore.collection('gallery-images').add({
         title: title,
         description: description,
         imageUrl: imageUrl,
         thumbnail: thumbnail,
+        createdAt: timestamp()
     })
     .then((item) => {
         item.update({id: item.id})

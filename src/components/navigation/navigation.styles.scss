@@ -19,16 +19,6 @@
     align-items: center;
   }
 
-  .logo {
-    transform: rotateX(0deg);
-    transition: transform 600ms linear;
-
-    &:hover {
-      transform: rotateX(360deg);
-      transition: transform 600ms linear;
-    }
-  }
-
   .links {
     display: flex;
     align-items: center;

@@ -3,7 +3,7 @@ import {firestore} from '../firebase/firebase.utils'
 const formData = require('form-data');
 const Mailgun = require('mailgun.js');
 const mailgun = new Mailgun(formData);
-const mailSenderAccount = 'sandboxfc4fde5de9eb4bbdb95aae59213973d.mailgun.org'
+const mailSenderAccount = 'sandboxfc4fde5de9eb4bbdb95aae59213973d3.mailgun.org'
 const emails = ['nikola.smis@outlook.com']
 let mg;
 
