@@ -21,35 +21,20 @@ const config = {
   export const storageRef = firestorage.ref();
   export const storageGalleryImagesRef = storageRef.child('gallery-images');
 
-export async function getImagesFromFolder(folderName){
-    const ref = storageRef.child(folderName)
-    let array = []
-
-    await ref.listAll()
-        .then(res => {
-            res.items.forEach(itemRef => {
-                itemRef.getDownloadURL()
-                    .then(url => {array.push(url);})
-            })
-        }).then(() => {return array})
-
-        return array
-}
-
-export function LoginWithEmail(email, password){
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-        // Signed in
-        var user = userCredential.user;
-        console.log('User logged in')
+export function addToGallery(collection, index, title, description, imageUrl, thumbnail){
+    firestore.collection(collection).doc(String.toString(index)).set({
+        title: title,
+        description: description,
+        imageUrl: imageUrl,
+        thumbnail: thumbnail
+    })
+    .then(() => {
+        console.log("Document successfully written!");
     })
     .catch((error) => {
-        //var errorCode = error.code;
-        var errorMessage = error.message;
-
-        console.log('Error: ' + errorMessage)
+        console.error("Error writing document: ", error);
     });
 }
-    
 
+export const auth = firebase.auth()
 export default firebase

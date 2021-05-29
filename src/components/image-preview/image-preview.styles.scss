@@ -63,6 +63,7 @@
   .image-about {
     .title {
       position: relative;
+      word-wrap: break-word;
       display: flex;
       flex-direction: column;
       margin-top: 10px;

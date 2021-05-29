@@ -11,7 +11,7 @@ let galleryImages = []
 class ImagesContainer extends React.Component{
     fetchImages=async()=>{
       let temp = []
-      const peopleRef=firestore.collection(this.props.data);
+      const peopleRef=firestore.collection('gallery-images');
     
       const data=await peopleRef.get();
       data.docs.forEach((item, idx)=>{
