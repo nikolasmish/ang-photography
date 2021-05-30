@@ -1,4 +1,8 @@
 import React from 'react'
+import {connect} from 'react-redux'
+
+import {setGalleryImages} from '../../redux/gallery-images/gallery-image.actions'
+import {getGalleryImages} from '../../firebase/firebase.utils'
 
 import './gallery-upload.styles.scss'
 
@@ -23,10 +27,13 @@ class GalleryUpload extends React.Component {
         this.setState({ [name]: value })
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
 
-        addToGallery(this.state.title, this.state.description, this.state.imageUrl, this.state.thumbnail)
+        await addToGallery(this.state.title, this.state.description, this.state.imageUrl, this.state.thumbnail)
+        let galleryImages = await getGalleryImages()
+
+        this.props.setGalleryImages(galleryImages)
 
         this.setState({
             title: '',
@@ -34,7 +41,6 @@ class GalleryUpload extends React.Component {
             imageUrl: '',
             thumbnail: ''
         })
-
     }
 
     render() {
@@ -55,4 +61,8 @@ class GalleryUpload extends React.Component {
     }
 }
 
-export default GalleryUpload
+const dispatchStateToProps = dispatch => ({
+    setGalleryImages: gallery => dispatch(setGalleryImages(gallery))
+})
+
+export default connect(null, dispatchStateToProps)(GalleryUpload)

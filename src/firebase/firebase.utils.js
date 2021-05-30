@@ -34,7 +34,7 @@ export const getGalleryImages = async () => {
     return temp
 }
 
-export function addToGallery(title, description, imageUrl, thumbnail){
+export const addToGallery = async (title, description, imageUrl, thumbnail) => {
     const timestamp = firebase.firestore.FieldValue.serverTimestamp;
     firestore.collection('gallery-images').add({
         title: title,
@@ -52,7 +52,7 @@ export function addToGallery(title, description, imageUrl, thumbnail){
     });
 }
 
-export function removeFromGallery(id){
+export const removeFromGallery = async (id) => {
     firestore.collection('gallery-images').doc(id.toString()).delete().then(() => {
         console.log("Document successfully deleted!");
     }).catch((error) => {

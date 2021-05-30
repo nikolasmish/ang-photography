@@ -4,40 +4,33 @@ import { connect } from 'react-redux'
 import { setGalleryImages } from '../../redux/gallery-images/gallery-image.actions'
 
 import ImagePreview from '../image-preview/image-preview.component'
-import {firestore, getGalleryImages} from '../../firebase/firebase.utils'
+import {getGalleryImages} from '../../firebase/firebase.utils'
 
 import './images-container.styles.scss'
 
-let galleryImages = []
 
 class ImagesContainer extends React.Component{
-  constructor({itemCount}){
-    super({itemCount})
-
-
-  }
-
+  galleryImages = this.props.galleryImages
+  
   async componentDidMount(){
-    if(galleryImages.length)
-      return
-    galleryImages = await getGalleryImages()
-    console.log(galleryImages)
+    if(!this.galleryImages.length){
+      this.galleryImages = await getGalleryImages()
+      this.props.setGalleryImages(this.galleryImages)
+    }
 
-    this.props.setGalleryImages(galleryImages)
-    
-    this.setState({})
+    this.forceUpdate()
   }
 
     render(){
       return(
           <div className='images-container'>
-              <ul className={galleryImages ? 'show' : 'hide'}>
+              <ul className={this.galleryImages ? 'show' : 'hide'}>
               {
-                galleryImages.length ?
-                galleryImages.slice(0, this.props.itemCount).map(
+                this.galleryImages.length ?
+                this.galleryImages.slice(0, this.props.itemCount).map(
                   (image, idx) => (
                   <li key={idx}>
-                    <ImagePreview id={idx} description={image.description} imageUrl={image.imageUrl} thumbnail={image.thumbnail} title={image.title} imagesData={galleryImages.slice(0, this.props.itemCount)} preview />
+                    <ImagePreview id={idx} description={image.description} imageUrl={image.imageUrl} thumbnail={image.thumbnail} title={image.title} imagesData={this.galleryImages.slice(0, this.props.itemCount)} preview />
                   </li>)
                   )
                   :
