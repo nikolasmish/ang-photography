@@ -8,7 +8,7 @@ import galleryReducer from './gallery-images/gallery-images.reducer'
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: []
+    whitelist: ['user']
 }
 
 const rootReducer = combineReducers({

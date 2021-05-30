@@ -37,7 +37,7 @@ class ImagesContainer extends React.Component{
                 galleryImages.slice(0, this.props.itemCount).map(
                   (image, idx) => (
                   <li key={idx}>
-                    <ImagePreview id={idx} description={image.description} imageUrl={image.imageUrl} thumbnail={image.thumbnail} title={image.title} imagesData={galleryImages} preview />
+                    <ImagePreview id={idx} description={image.description} imageUrl={image.imageUrl} thumbnail={image.thumbnail} title={image.title} imagesData={galleryImages.slice(0, this.props.itemCount)} preview />
                   </li>)
                   )
                   :

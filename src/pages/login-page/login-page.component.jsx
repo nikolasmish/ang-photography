@@ -27,7 +27,7 @@ class LoginPage extends React.Component {
         this.setState({ [name]: value })
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
 
         auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
@@ -35,13 +35,9 @@ class LoginPage extends React.Component {
 
                 return auth.signInWithEmailAndPassword(this.state.email, this.state.password)
                 .then((userCredential) => {
-                    this.props.setCurrentUser({
-                        currentUser: userCredential
-                    })
-                    console.log(userCredential)
+                    this.props.setCurrentUser(userCredential)
                 })
                 .catch((error) => {
-                    //var errorCode = error.code;
                     var errorMessage = error.message;
             
                     console.log('Error: ' + errorMessage)
@@ -52,9 +48,6 @@ class LoginPage extends React.Component {
                 var errorCode = error.code;
                 var errorMessage = error.message;
             });
-
-        
-
     }
         
 

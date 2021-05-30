@@ -22,9 +22,6 @@ const config = {
   export const storageGalleryImagesRef = storageRef.child('gallery-images');
 
 export const getGalleryImages = async () => {
-
-    
-
     console.log('FETCHING')
     let temp = []
     const peopleRef=firestore.collection('gallery-images').orderBy('createdAt', 'desc');

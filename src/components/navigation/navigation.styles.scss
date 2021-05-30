@@ -39,6 +39,10 @@
   .right-side {
     display: flex;
     align-items: center;
+
+    .buttons {
+      display: flex;
+    }
   }
 
   .button {
@@ -46,7 +50,7 @@
   }
 
   .mobile {
-    display: none;
+    display: flex;
   }
 }
 
@@ -62,8 +66,7 @@
       }
     }
 
-    .links,
-    .button {
+    .links {
       display: none;
     }
   }

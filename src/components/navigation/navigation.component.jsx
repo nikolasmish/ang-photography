@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { setCurrentUser } from '../../redux/user/user.actions'
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -10,8 +12,13 @@ import './navigation.styles.scss'
 import CustomButton from '../custom-button/custom-button.component'
 
 
-const Navigation = ({currentUser}) => (
-    <div className='navigation'>
+const Navigation = ({currentUser, setCurrentUser}) => {
+    const userLogout = () => {
+        setCurrentUser(null)
+    }
+
+    return(
+<div className='navigation'>
         <div className="box">
             <Link to='/' style={{textDecoration:"none"}} className='logo' >
                 <h2 style={{margin:'0px', color:'black'}}>ONA ITTY</h2>
@@ -35,32 +42,41 @@ const Navigation = ({currentUser}) => (
         </div>
         <div className='box'>
             <div className='right-side'>
-                <a className='link' href="https://www.facebook.com/ONA-ITTY-102068988686196" rel="noreferrer" target='_blank'><FontAwesomeIcon icon={faFacebook} size='2x' /></a>
-                <a className='link' href="https://www.instagram.com/onaitty/" rel="noreferrer" target='_blank'><FontAwesomeIcon icon={faInstagram} size='2x' /></a>
-                <Link className='button' to='/arrange'>
-                    <CustomButton>ZAKAŽI</CustomButton>
-                </Link>
-                {
+            {
                     currentUser ?
                     (
-                    <Link className='button' to='/admin'>
-                        <CustomButton>EDIT POSTS</CustomButton>
-                    </Link>
+                    <div className="buttons">
+                        <Link className='button' to='/admin'>
+                            <CustomButton>UPLOAD</CustomButton>
+                        </Link >
+                        <div className="button"></div>
+                            <CustomButton onClick={() => userLogout()}>LOGOUT</CustomButton>
+                    </div>
                     )
                     :
-                    null
+                    <div className='mobile'>
+                        <a className='link' href="https://www.facebook.com/ONA-ITTY-102068988686196" rel="noreferrer" target='_blank'><FontAwesomeIcon icon={faFacebook} size='2x' /></a>
+                        <a className='link' href="https://www.instagram.com/onaitty/" rel="noreferrer" target='_blank'><FontAwesomeIcon icon={faInstagram} size='2x' /></a>
+                        <Link className='button' to='/arrange'>
+                            <CustomButton>ZAKAŽI</CustomButton>
+                        </Link>
+                    </div>
                 }
-                
             </div>
         </div>
-        <div className='mobile'>
-                <FontAwesomeIcon icon={faBars} size={'lg'} style={{color:'black'}} />
-            </div>
+                
+
     </div>
-)
+    )
+    
+}
 
 const mapStateToProps = state => ({
     currentUser: state.user.currentUser
 })
 
-export default connect()(Navigation);
+const mapDispatchToProps = dispatch => ({
+    setCurrentUser: user => dispatch(setCurrentUser(user))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
