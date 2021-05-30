@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ang-photography/static/css/main.7f2c64f7.chunk.css",
-    "main.js": "/ang-photography/static/js/main.c667301e.chunk.js",
-    "main.js.map": "/ang-photography/static/js/main.c667301e.chunk.js.map",
+    "main.css": "/ang-photography/static/css/main.bee5e18c.chunk.css",
+    "main.js": "/ang-photography/static/js/main.94f08782.chunk.js",
+    "main.js.map": "/ang-photography/static/js/main.94f08782.chunk.js.map",
     "runtime-main.js": "/ang-photography/static/js/runtime-main.5a8ea8c9.js",
     "runtime-main.js.map": "/ang-photography/static/js/runtime-main.5a8ea8c9.js.map",
     "static/css/2.d6052868.chunk.css": "/ang-photography/static/css/2.d6052868.chunk.css",
-    "static/js/2.0a7019a4.chunk.js": "/ang-photography/static/js/2.0a7019a4.chunk.js",
-    "static/js/2.0a7019a4.chunk.js.map": "/ang-photography/static/js/2.0a7019a4.chunk.js.map",
+    "static/js/2.f0a9543f.chunk.js": "/ang-photography/static/js/2.f0a9543f.chunk.js",
+    "static/js/2.f0a9543f.chunk.js.map": "/ang-photography/static/js/2.f0a9543f.chunk.js.map",
     "index.html": "/ang-photography/index.html",
     "static/css/2.d6052868.chunk.css.map": "/ang-photography/static/css/2.d6052868.chunk.css.map",
-    "static/css/main.7f2c64f7.chunk.css.map": "/ang-photography/static/css/main.7f2c64f7.chunk.css.map",
-    "static/js/2.0a7019a4.chunk.js.LICENSE.txt": "/ang-photography/static/js/2.0a7019a4.chunk.js.LICENSE.txt"
+    "static/css/main.bee5e18c.chunk.css.map": "/ang-photography/static/css/main.bee5e18c.chunk.css.map",
+    "static/js/2.f0a9543f.chunk.js.LICENSE.txt": "/ang-photography/static/js/2.f0a9543f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5a8ea8c9.js",
     "static/css/2.d6052868.chunk.css",
-    "static/js/2.0a7019a4.chunk.js",
-    "static/css/main.7f2c64f7.chunk.css",
-    "static/js/main.c667301e.chunk.js"
+    "static/js/2.f0a9543f.chunk.js",
+    "static/css/main.bee5e18c.chunk.css",
+    "static/js/main.94f08782.chunk.js"
   ]
 }
