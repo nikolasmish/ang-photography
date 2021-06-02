@@ -34,6 +34,33 @@ export const getGalleryImages = async () => {
     return temp
 }
 
+export const getBlogPosts = async () => {
+    console.log('FETCHING')
+    let temp = []
+    const blogRef = firestore.collection('blogs');
+    
+    const data=await blogRef.get();
+    data.docs.forEach((item)=>{
+        temp.push(item.data())
+    })
+
+    return temp
+}
+
+export const getSpecificBlogPost = async (blogId) => {
+    let temp = [];
+    const specificBlogRef = firestore.collection('blogs').where('blogId', '==', blogId);
+    await specificBlogRef.get().then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+            temp = doc.data()
+        })
+    })
+
+    console.log(temp)
+    return temp
+    
+}
+
 export const addToGallery = async (title, description, imageUrl, thumbnail) => {
     const timestamp = firebase.firestore.FieldValue.serverTimestamp;
     firestore.collection('gallery-images').add({

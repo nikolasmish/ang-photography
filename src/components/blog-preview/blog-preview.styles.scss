@@ -1,0 +1,44 @@
+@import "../../assets/styles/colors";
+
+.blog-preview {
+  background-color: white;
+  height: auto;
+  margin: 5px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 6px 7px 18px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 6px 7px 18px 2px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  position: relative;
+
+  .image {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    transition: transform 500ms linear;
+  }
+
+  .title {
+    position: relative;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      background-color: $greenblue;
+      width: 40%;
+      height: 2px;
+    }
+  }
+
+  .description {
+    word-wrap: break-word;
+  }
+}

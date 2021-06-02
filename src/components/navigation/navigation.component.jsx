@@ -5,7 +5,6 @@ import { setCurrentUser } from '../../redux/user/user.actions'
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 import {faInstagram, faFacebook} from '@fortawesome/free-brands-svg-icons'
 
 import './navigation.styles.scss'

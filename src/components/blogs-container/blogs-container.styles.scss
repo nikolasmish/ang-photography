@@ -1,0 +1,36 @@
+.blog-container {
+  width: 75%;
+  margin: auto;
+  padding: 20px 0px;
+
+  .show {
+    transition: opacity 500ms linear;
+    opacity: 1;
+  }
+
+  .hide {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  }
+
+  ul {
+    display: grid;
+    margin: 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-columns: auto;
+    grid-gap: 16px;
+    justify-content: center;
+    padding: initial;
+
+    li {
+      list-style-type: none;
+      padding: 5px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .images {
+    width: 85%;
+  }
+}

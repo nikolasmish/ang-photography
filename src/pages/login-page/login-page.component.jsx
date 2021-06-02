@@ -45,8 +45,8 @@ class LoginPage extends React.Component {
             })
             .catch((error) => {
                 // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
+                // var errorCode = error.code;
+                // var errorMessage = error.message;
             });
     }
         

@@ -14,6 +14,8 @@ import ContactPage from './pages/contact/contact.component';
 import ArrangePage from './pages/arrange/arrange.component';
 import AdminPage from './pages/admin-page/admin-page.component';
 import MobileNavigation from './components/mobile-navigation/mobile-navigation.component';
+import BlogsPage from './pages/blogs/blogs.component';
+import BlogPost from './components/blog-post/blog-post.component';
 
 
 
@@ -49,6 +51,8 @@ const App = () => {
               <Route exact path='/faq' component={FaqPage} />
               <Route exact path='/contact' component={ContactPage} />
               <Route exact path='/gallery' component={GalleryPage} />
+              <Route exact path='/blogs' component={BlogsPage} />
+              <Route path='/blogs/:blogId' component={BlogPost} />
               <Route path='/' component={Homepage} />
           </Switch>
         {
