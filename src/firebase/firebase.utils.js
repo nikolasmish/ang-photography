@@ -37,7 +37,7 @@ export const getGalleryImages = async () => {
 export const getBlogPosts = async () => {
     console.log('FETCHING')
     let temp = []
-    const blogRef = firestore.collection('blogs');
+    const blogRef = firestore.collection('blogs').orderBy('blogId', 'desc');
     
     const data=await blogRef.get();
     data.docs.forEach((item)=>{
@@ -55,10 +55,57 @@ export const getSpecificBlogPost = async (blogId) => {
             temp = doc.data()
         })
     })
-
     console.log(temp)
     return temp
-    
+}
+
+export const addBlogPost = async (title, description, thumbnail, blogContent) => {
+    const size = await firestore.collection('blogs').get().then(snap => snap.size)
+    firestore.collection('blogs').add({
+        title: title,
+        description: description,
+        thumbnail: thumbnail,
+        blogContent: blogContent,
+        blogId: size
+    })
+    .then((item) => {
+        alert('Success!')
+    })
+    .catch((error) => {
+        alert('Error: ' + error)
+    });
+}
+
+export const editBlogPost = async (title, description, thumbnail, blogContent, id) => {
+    await firestore.collection('blogs').where('blogId', '==', id).get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            doc.ref.update({
+                title: title,
+                description: description,
+                thumbnail: thumbnail,
+                blogContent: blogContent,
+                blogId: id
+            });
+        });
+    })
+    .then(alert('Successfully Updated!'))
+    .catch((error) => {
+        alert("Error getting documents: ", error);
+    });
+}
+
+export const deleteBlogPost = async (id) => {
+    await firestore.collection('blogs').where('blogId', '==', id).get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            doc.ref.delete()
+        });
+    })
+    .then(alert('Successfully Deleted'))
+    .catch((error) => {
+        alert("Error getting documents: ", error);
+    });
 }
 
 export const addToGallery = async (title, description, imageUrl, thumbnail) => {

@@ -6,6 +6,7 @@ import './blogs.styles.scss'
 
 const BlogsPage = () => (
     <div className="blogs-page">
+        <h2 className='blogs-title'>Blog</h2>
         <BlogsContainer />
     </div>
 )

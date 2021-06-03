@@ -16,6 +16,8 @@ import AdminPage from './pages/admin-page/admin-page.component';
 import MobileNavigation from './components/mobile-navigation/mobile-navigation.component';
 import BlogsPage from './pages/blogs/blogs.component';
 import BlogPost from './components/blog-post/blog-post.component';
+import BlogUpload from './components/blog-upload/blog-upload.component';
+import BlogEdit from './components/blog-edit/blog-edit.component';
 
 
 
@@ -51,7 +53,9 @@ const App = () => {
               <Route exact path='/faq' component={FaqPage} />
               <Route exact path='/contact' component={ContactPage} />
               <Route exact path='/gallery' component={GalleryPage} />
+              <Route exact path='/blogs/upload' component={BlogUpload} />
               <Route exact path='/blogs' component={BlogsPage} />
+              <Route path='/blogs/:blogId/edit' component={BlogEdit} />
               <Route path='/blogs/:blogId' component={BlogPost} />
               <Route path='/' component={Homepage} />
           </Switch>

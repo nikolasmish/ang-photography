@@ -18,7 +18,7 @@ const Homepage = () => (
             </Link>
         </div>
         <div className="new-content">
-            <h2 className='header-title'>Najnovije objave</h2>
+            <h2 className='header-title'>Najnoviji tekstovi</h2>
             <BlogsContainer itemCount={4} />
             <Link to='/blogs' className='button'>
                 <CustomButton>Pogledaj više</CustomButton>

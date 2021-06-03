@@ -8,7 +8,7 @@ class BlogPost extends React.Component {
     blogData = []
 
     async componentDidMount(){
-        console.log()
+        console.log('MOUNTED')
         this.blogData = await getSpecificBlogPost(parseInt(this.props.match.params.blogId))
         document.getElementById("blog-content").innerHTML = this.blogData.blogContent
         this.forceUpdate()
@@ -17,11 +17,10 @@ class BlogPost extends React.Component {
     render(){
         return(
             <div className="blog-post">
-                <p>{this.blogData.description}</p>
                 <div className="blog-content" id="blog-content">
                     
                 </div>
-                a
+
             </div>
         )
     }

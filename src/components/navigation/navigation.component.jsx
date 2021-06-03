@@ -25,6 +25,9 @@ const Navigation = ({currentUser, setCurrentUser}) => {
         </div>
         <div className='links box'>
             <div>
+                <Link to='/blogs'>
+                    <span className='link'>BLOG</span>
+                </Link>
                 <Link to='/gallery'>
                     <span className='link'>GALERIJA</span>
                 </Link>

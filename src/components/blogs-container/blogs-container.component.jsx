@@ -26,7 +26,7 @@ blogPosts = []
                 this.blogPosts.slice(0, this.props.itemCount).map(
                   (blog, idx) => (
                   <li key={idx}>
-                    <BlogPreview id={idx} title={blog.title} description={blog.description} thumbnail={blog.thumbnail}/>
+                    <BlogPreview id={blog.blogId} title={blog.title} description={blog.description} thumbnail={blog.thumbnail} />
                   </li>)
                   )
                   :
