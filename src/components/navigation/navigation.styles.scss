@@ -1,7 +1,7 @@
 @import "../../assets/styles/colors";
 
 .navigation {
-  position: sticky;
+  // position: sticky;
   top: 0;
   background-color: white;
   z-index: 100;
@@ -11,6 +11,12 @@
   align-items: center;
   padding: 0;
   margin: auto;
+
+  .logo {
+    font-size: 20px;
+    margin: 0px;
+    color: black;
+  }
 
   .box {
     flex: 1;
@@ -23,10 +29,12 @@
     display: flex;
     align-items: center;
     height: 100%;
+    flex: 2;
   }
 
   .link {
-    margin: 10px 10px;
+    font-size: 20px;
+    margin: 0px 10px;
     color: black;
     height: 100%;
     text-decoration: none;

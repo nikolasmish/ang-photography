@@ -1,3 +1,147 @@
+@import "../../assets/styles/colors";
+
 .blog-post {
   min-height: 80vh;
+  width: 50%;
+  margin: auto;
+
+  .blog-content {
+    margin-bottom: 40px;
+
+    h1 {
+      font-size: 48px;
+    }
+
+    h2 {
+      font-size: 42px;
+    }
+
+    h3 {
+      font-size: 38px;
+    }
+
+    h4 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .blog-about {
+    margin-bottom: 40px;
+
+    .written-by {
+      font-size: 32px;
+      font-weight: 400;
+      margin: 0;
+      color: $gray;
+    }
+
+    .about-author {
+      display: flex;
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        margin-right: 20px;
+        margin-top: 20px;
+      }
+
+      .author-title {
+        font-size: 32px;
+        margin: 0;
+        font-weight: 400;
+      }
+
+      .author-description {
+        width: 70%;
+        font-size: 24px;
+        margin: 0;
+        color: $gray;
+        margin-bottom: 10px;
+      }
+
+      .author-socials {
+        .link {
+          color: $gray;
+          margin-right: 10px;
+
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .blog-post {
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+
+    .blog-content {
+      h1 {
+        font-size: 32px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      h4 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    .blog-about {
+      .written-by {
+        font-size: 24px;
+        font-weight: 400;
+        margin: 0;
+        color: $gray;
+      }
+
+      .about-author {
+        display: flex;
+        align-items: center;
+
+        .author-title {
+          font-size: 24px;
+          margin: 0;
+          font-weight: 400;
+        }
+
+        .author-description {
+          width: 100%;
+          font-size: 18px;
+          margin: 0;
+          color: $gray;
+        }
+
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 100%;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
 }

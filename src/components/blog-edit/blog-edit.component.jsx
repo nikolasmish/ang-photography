@@ -23,8 +23,12 @@ class BlogEdit extends React.Component{
     }
 
     async componentDidMount(){
-        blogData = await getSpecificBlogPost(parseInt(this.props.match.params.blogId))
-
+        if(this.props.blogId != null){
+            blogData = await getSpecificBlogPost(parseInt(this.props.blogId))
+        }else{
+            blogData = await getSpecificBlogPost(parseInt(this.props.match.params.blogId))
+        }
+        
         this.setState({
             title: blogData.title,
             description: blogData.description,
@@ -47,11 +51,13 @@ class BlogEdit extends React.Component{
       })
     }
 
-    handleDelete = () => {
+    handleDelete = (event) => {
+        event.preventDefault()
         deleteBlogPost(blogData.blogId)
     }
 
     handleChange = event => {
+        event.preventDefault()
         const {value, name } = event.target
         this.setState({ [name]: value })
     }
@@ -74,9 +80,7 @@ class BlogEdit extends React.Component{
                                 <CustomButton style={{marginTop:'10px', color:'red'}} onClick={this.handleDelete}>DELETE POST</CustomButton>
                             </div>
                         </form>
-
                     </div>
-                
                 )
                 :
                 null
