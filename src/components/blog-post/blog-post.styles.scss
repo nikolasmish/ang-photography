@@ -9,23 +9,34 @@
     margin-bottom: 40px;
 
     h1 {
-      font-size: 48px;
-    }
-
-    h2 {
       font-size: 42px;
     }
 
-    h3 {
+    h2 {
       font-size: 38px;
     }
 
+    h3 {
+      font-size: 34px;
+    }
+
     h4 {
-      font-size: 32px;
+      font-size: 30px;
     }
 
     p {
-      font-size: 24px;
+      font-size: 18px;
+      color: rgb(75, 75, 75);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    ul,
+    li {
+      margin: 10px 0px;
     }
 
     img {

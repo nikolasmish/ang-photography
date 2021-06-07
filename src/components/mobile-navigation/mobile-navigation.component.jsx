@@ -15,10 +15,10 @@ const MobileNavigation = () => (
                     <h3>Početna</h3>
                 </div>
             </Link>
-            <Link to='/about'>
+            <Link to='/gallery'>
                 <div className="link">
                     <FontAwesomeIcon icon={faImages} size='lg' />
-                    <h3>O Meni</h3>
+                    <h3>Galerija</h3>
                 </div>
             </Link>
             <Link to='/faq'>
