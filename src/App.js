@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom'
 import './App.css';
 import { useState, useEffect } from "react";
 
-
 import Navigation from './components/navigation/navigation.component';
 import GalleryPage from './pages/gallery/gallery.component'
 import Homepage from './pages/homepage/homepage.component'
@@ -18,8 +17,6 @@ import BlogsPage from './pages/blogs/blogs.component';
 import BlogPost from './components/blog-post/blog-post.component';
 import BlogUpload from './components/blog-upload/blog-upload.component';
 import BlogEdit from './components/blog-edit/blog-edit.component';
-
-
 
 
 const App = () => {

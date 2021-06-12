@@ -1,34 +1,41 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { getSpecificBlogPost } from '../../firebase/firebase.utils'
 
-import {getSpecificBlogPost} from '../../firebase/firebase.utils'
-
-import CustomButtom from '../custom-button/custom-button.component'
-import BlogEdit from '../blog-edit/blog-edit.component'
+import CustomButton from '../custom-button/custom-button.component'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faInstagram, faFacebook} from '@fortawesome/free-brands-svg-icons'
 
-
 import './blog-post.styles.scss'
 
 class BlogPost extends React.Component {
-    blogData = []
+    constructor(){
+      super()
+
+      this.state = {
+        blogData: []
+      }
+    }
 
     async componentDidMount(){
-        this.blogData = await getSpecificBlogPost(parseInt(this.props.match.params.blogId))
-        document.getElementById("blog-content").innerHTML = this.blogData.blogContent
+        this.setState({ blogData: await getSpecificBlogPost(parseInt(this.props.match.params.blogId))}, 
+        () => document.getElementById("blog-content").innerHTML = this.state.blogData.blogContent)
+        
     }
 
     render(){
         return(
             <div className="blog-post">
-                <div className="blog-content" id="blog-content">
-                    
-                </div>
+              {
+                this.state.blogData.blogContent ?
+                <div className="blog-content" id='blog-content'></div>
+                : <p>Loading..</p>
+
+              }
                 <div className="blog-about">
-                    <h2 className="written-by">WRITTEN BY</h2>
+                    <h2 className="written-by">Something about the Author</h2>
                     <div className="about-author">
                         <img src="https://i.imgur.com/jJfCSjD.png" alt="" />
                         <div>
@@ -42,11 +49,12 @@ class BlogPost extends React.Component {
                     </div>
                 </div>
                 {
-                    this.props.currentUser ?
-                        <BlogEdit blogId={parseInt(this.props.match.params.blogId)} />
-                    : null
+                  this.props.currentUser ?
+                      <Link to={`${this.state.blogData.blogId}/edit`}>
+                        <CustomButton>Edit</CustomButton>
+                      </Link>
+                  : null
                 }
-                
             </div>
         )
     }

@@ -5,6 +5,7 @@ import {getSpecificBlogPost, deleteBlogPost} from '../../firebase/firebase.utils
 
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
+import BlogPostPreview from '../blog-post-preview/blog-post-preview.component'
 
 import './blog-edit.styles.scss'
 
@@ -65,6 +66,7 @@ class BlogEdit extends React.Component{
     render(){
         return(
             <div className="blog-edit">
+              <BlogPostPreview blogContent={this.state.blogContent} />
 
                 {blogData && this.props.currentUser ? 
                 (

@@ -9,23 +9,23 @@
     margin-bottom: 40px;
 
     h1 {
-      font-size: 42px;
-    }
-
-    h2 {
       font-size: 38px;
     }
 
-    h3 {
+    h2 {
       font-size: 34px;
     }
 
-    h4 {
+    h3 {
       font-size: 30px;
     }
 
+    h4 {
+      font-size: 26px;
+    }
+
     p {
-      font-size: 18px;
+      font-size: 16px;
       color: rgb(75, 75, 75);
     }
 
@@ -48,9 +48,10 @@
     margin-bottom: 40px;
 
     .written-by {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 400;
       margin: 0;
+      margin-bottom: 5px;
       color: $gray;
     }
 
@@ -66,26 +67,26 @@
       }
 
       .author-title {
-        font-size: 32px;
+        font-size: 28px;
+        font-weight: 700;
         margin: 0;
-        font-weight: 400;
       }
 
       .author-description {
         width: 70%;
-        font-size: 24px;
+        font-size: 18px;
         margin: 0;
-        color: $gray;
+        color: $darkgray;
         margin-bottom: 10px;
       }
 
       .author-socials {
         .link {
-          color: $gray;
+          color: black;
           margin-right: 10px;
 
           &:hover {
-            color: black;
+            color: $darkgray;
           }
         }
       }

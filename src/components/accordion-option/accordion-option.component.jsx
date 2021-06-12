@@ -36,7 +36,7 @@ class AccordionOption extends React.Component {
                     <h2>{props.question}</h2>
                     <FontAwesomeIcon className={isOpen ? 'opened' : 'closed'} icon={faArrowCircleDown} />
                     </div>
-                <div className={`answer ${isOpen ? 'opened' : ''}`}>{props.answer}</div>
+                <div className='answer'>{props.answer}</div>
             </div>
         )
     }
