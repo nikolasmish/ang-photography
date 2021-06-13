@@ -1,5 +1,7 @@
+@import '../../assets/styles/colors';
+
 .footer {
-  background-color: black;
+  background-color: $green;
   display: flex;
   justify-content: center;
   align-items: center;

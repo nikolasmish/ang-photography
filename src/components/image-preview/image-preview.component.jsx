@@ -29,7 +29,7 @@ const ImagePreview = (props) => (
                     null
                     }
                 </div>
-    </div>
+            </div>
         </div>
 
 

@@ -40,7 +40,7 @@ class BlogPost extends React.Component {
                         <img src="https://i.imgur.com/jJfCSjD.png" alt="" />
                         <div>
                             <h2 className='author-title'>Angie Simic</h2>
-                            <p className='author-description'>Philosophy student, writer, photographer, dog owner. A passion for language and the unexplored universe. I aim to marry poetry and nature. </p>
+                            <p className='author-description'>English language teacher, amateur photographer and author, karaoke lover and the best celebrity that never was. </p>
                             <div className="author-socials">
                                 <a className='link' href="https://www.facebook.com/ONA-ITTY-102068988686196" rel="noreferrer" target='_blank'><FontAwesomeIcon icon={faFacebook} size='2x' /></a>
                                 <a className='link' href="https://www.instagram.com/onaitty/" rel="noreferrer" target='_blank'><FontAwesomeIcon icon={faInstagram} size='2x' /></a>
